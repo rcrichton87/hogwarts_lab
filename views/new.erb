@@ -7,10 +7,10 @@
 
   <label for="house">House:</label>
   <select id="house" name="house">
-    <option value = "hufflepuff">Hufflepuff</option>
-    <option value = "gryffindor">Gryffindor</option>
-    <option value = "slytherin">Slytherin</option>
-    <option value = "ravenclaw">Ravenclaw</option>
+    <% houses = House.all %>
+    <% houses.each do |house| %>
+      <option value = "<% house.id %>"><%=house.name%></option>
+    <% end %>
   </select>
 
   <label for="age">Age:</label>

@@ -33,14 +33,14 @@ house4.save
 student1 = Student.new({
   "first_name" => "Alice",
   "last_name" => "Loudon",
-  "house" => "Hufflepuff",
+  "house_id" => "#{house3.id}",
   "age" => 25
   })
 
 student2 = Student.new({
   "first_name" => "Ross",
   "last_name" => "Crichton",
-  "house" => "Ravenclaw",
+  "house_id" => "#{house4.id}",
   "age" => 29
   })
 

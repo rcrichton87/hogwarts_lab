@@ -15,3 +15,6 @@ CREATE TABLE houses (
   name VARCHAR(255),
   logo VARCHAR(255)
 );
+
+ALTER TABLE students DROP COLUMN house;
+ALTER TABLE students ADD house_id INT4 REFERENCES houses(id);
