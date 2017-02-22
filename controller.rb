@@ -17,3 +17,14 @@ post '/students' do
   @student.save
   erb(:create)
 end
+
+post '/students/:id/delete' do
+  student = Student.find_by_id(params[:id])
+  student.delete
+  redirect to '/students'
+end
+
+get '/students/:id' do
+  @student = Student.find_by_id(params[:id])
+  erb(:show)
+end

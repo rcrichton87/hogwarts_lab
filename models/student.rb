@@ -24,6 +24,11 @@ class Student
     SqlRunner.run(sql)
   end
 
+  def delete
+    sql = "DELETE FROM students where id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def self.all
     sql = "SELECT * FROM students"
     return self.get_many(sql)
@@ -31,8 +36,9 @@ class Student
 
   def self.find_by_id(id)
     sql = "SELECT * FROM students WHERE id = #{id}"
-    student = SqlRunner.run(sql).first
-    return student
+    student_hash = SqlRunner.run(sql).first
+    result = Student.new(student_hash)
+    return result
   end
 
   def self.get_many(sql)
