@@ -1,0 +1,42 @@
+body {
+    background-color: darkslategray;
+    color: floralwhite;
+}
+
+a:link {
+  color:lightskyblue;
+}
+
+a:visited {
+  color: lightyellow;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+}
+
+label {
+  padding: 2px;
+}
+
+.grid{
+  display: flex;
+}
+
+.grid-row{
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.cell{
+  flex: 1; 
+  padding: 10px;
+  margin: 10px;
+  border: solid 1px beige;
+  display: inline-block;
+  flex-wrap: wrap;
+  width: 150px;
+}
+

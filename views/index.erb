@@ -1,9 +1,15 @@
-<% @students.each do |student| %>
-  <p>First Name: <%= student.first_name %></p>
-  <p>Last Name: <%= student.last_name %></p>
-  <p>House: <%= student.house_id %></p>
-  <p>Age: <%= student.age %></p>
-  <a href="/students/<%=student.id%>">Show Student</a>
-  <hr />
-<% end %>
+<div class="grid">
+  <div class="grid-row">
+    <% @students.each do |student| %>
+      <div class="cell">
+        <p>First Name: <%= student.first_name %></p>
+        <p>Last Name: <%= student.last_name %></p>
+        <% house = House.find_by_id(student.house_id) %>
+        <p>House: <%= house.name %></p>
+        <p>Age: <%= student.age %></p>
+        <a href="/students/<%=student.id%>">Show Student</a>
+      </div>
+    <% end %>
+  </div>
+</div>
 
