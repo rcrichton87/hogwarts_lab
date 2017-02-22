@@ -24,4 +24,16 @@ class Student
     SqlRunner.run(sql)
   end
 
+  def self.all
+    sql = "SELECT * FROM students"
+    return self.get_many(sql)
+  end
+
+
+  def self.get_many(sql)
+    students = SqlRunner.run(sql)
+    result = students.map {|student| Student.new(student)}
+    return result  
+  end
+
 end
