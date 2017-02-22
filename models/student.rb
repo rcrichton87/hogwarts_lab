@@ -13,4 +13,10 @@ class Student
     @age = options[:age].to_i
   end
 
+  def save
+    sql = "INSERT INTO students (first_name, last_name, house, age) VALUES ('#{@first_name}', '#{@last_name}', '#{@house}', #{@age}) RETURNING *;"
+    student = SqlRunner.run(sql).first
+    @id = student['id'].to_i
+  end
+
 end
