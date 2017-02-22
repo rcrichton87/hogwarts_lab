@@ -1,4 +1,5 @@
 require_relative('../models/student.rb')
+require('pry')
 
 Student.delete_all
 
@@ -10,3 +11,6 @@ student1 = Student.new({
   })
 
 student1.save
+
+binding.pry
+nil

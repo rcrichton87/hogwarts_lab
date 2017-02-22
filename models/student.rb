@@ -29,6 +29,11 @@ class Student
     return self.get_many(sql)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM students WHERE id = #{id}"
+    student = SqlRunner.run(sql).first
+    return student
+  end
 
   def self.get_many(sql)
     students = SqlRunner.run(sql)
